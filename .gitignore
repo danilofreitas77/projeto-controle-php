@@ -1,0 +1,38 @@
+# Arquivos e pastas do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de log ou de debug
+*.log
+error_log
+debug.log
+
+# Credenciais e configs locais
+controller/conexao.php
+
+# Arquivos de upload (PDFs de comprovantes)
+uploads/*
+!uploads/.gitkeep
+
+# Banco de dados local
+*.sql
+*.sqlite
+*.db
+
+# Pastas geradas por IDEs/editores
+.vscode/
+.idea/
+
+# Cache e temporários
+*.bak
+*.tmp
+*.swp
+
+# Dependências externas (se você usar futuramente)
+vendor/
+node_modules/
+
+# Arquivos de build ou deploy (caso use futuramente)
+dist/
+build/
+.env
