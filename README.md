@@ -1,4 +1,4 @@
-# 🏡 Portal de Controle de Gastos – Alphaville
+# 🏡 Portal de Controle de Gastos e transparência
 
 Sistema web para controle de despesas, receitas e prestação de contas do condomínio Alphaville, desenvolvido em PHP, MySQL, HTML, CSS e Bootstrap.
 
