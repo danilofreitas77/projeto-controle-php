@@ -28,11 +28,11 @@ uploads/*
 *.tmp
 *.swp
 
-# Dependências externas (se você usar futuramente)
+# Dependências externas
 vendor/
 node_modules/
 
-# Arquivos de build ou deploy (caso use futuramente)
+# Arquivos de build ou deploy
 dist/
 build/
 .env
