@@ -1,0 +1,26 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* garantir que cobre toda a largura da viewport */
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.85); /* cor para cobrir o background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box; /* evitar problemas de largura e padding */
+  padding: 0 20px;
+  z-index: 10; /* garantir que fique sobre outros elementos */
+}
+
+/* Responsividade para o footer no celular */
+@media (max-width: 600px) {
+  footer {
+    height: auto; /* altura automática */
+    padding: 15px 20px;
+    flex-direction: column; /* empilhar conteúdo se houver */
+    text-align: center;
+  }
+}
