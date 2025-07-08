@@ -20,7 +20,7 @@
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     //Busca o usuário pelo email pra evitar duplicidade
-    if(buscarUsuarioPorEmail($conn, $email)) {
+    if(emailJaCadastrado($conn, $email)) {
         die("E-mail já cadastrado!");
     }
 
