@@ -21,7 +21,7 @@
       <!-- Lado direito -->
       <div class="col-md-6 lado-direito">
         <div class="form-container">
-          <h2 class="mb-4">Cadastro</h2>
+          <h2 class="mb-4">Login</h2>
           <form action="../api/login_usuario.php" method="POST">
             <div class="mb-3">
               <label class="form-label">Email</label>
@@ -31,7 +31,7 @@
               <label class="form-label">Senha</label>
               <input type="password" class="form-control" name="senha" required />
             </div>
-            <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+            <button type="submit" class="btn btn-success w-100">Entrar</button>
           </form>
         </div>
       </div>
