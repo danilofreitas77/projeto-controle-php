@@ -22,7 +22,7 @@
 
     // Função para levar os dados do usuario para a session na hora do login
     function obterUsuarioPorEmail($conn, $email) {
-        $stmt = $conn->prepare("SELECT id, nome, senha, tipo FROM usuario WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id_usuario, nome, senha, tipo FROM usuarios WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
