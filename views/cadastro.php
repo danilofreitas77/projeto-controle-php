@@ -45,4 +45,19 @@
     </div>
   </div>
 </body>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+    const senha = form.senha.value;
+    const confirma = form.confirma_senha.value;
+
+    if (senha !== confirma) {
+      e.preventDefault(); // Impede o envio do form
+      alert('As senhas não coincidem!');
+    }
+  });
+</script>
+
+
 </html>
