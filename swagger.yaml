@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: Portal da Transparência - API
+  version: 1.0.0
+  description: >
+    Esta é a documentação da API do Portal da Transparência do condomínio, 
+    que permite o acesso a dados como despesas, receitas, meses cadastrados, entre outros.
+
+servers:
+  - url: http://localhost/projeto-controle-php/api
+    description: Servidor local (XAMPP)
+
+paths:
+  /listar_meses.php:
+    get:
+      summary: Lista os meses com registros financeiros
+      description: Retorna uma lista com os meses disponíveis, conforme os registros no banco de dados.
+      responses:
+        '200':
+          description: Lista de meses cadastrados com pelo menos um pagamento
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  example: "Julho"
+        '500':
+          description: Erro interno no servidor
