@@ -15,7 +15,7 @@
         <h2>Bem vindo (a) de volta!</h2>
         <h2>Ainda não tem uma conta?</h2>
         <p>Cadastre-se agora mesmo!</p>
-        <a href="login.php" class="btn btn-light">Faça o login!</a>
+        <a href="cadastro.php" class="btn btn-light">Cadastre-se</a>
       </div>
 
       <!-- Lado direito -->
