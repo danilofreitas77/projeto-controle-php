@@ -16,7 +16,7 @@ $nomeUsuario = $_SESSION['nome']; // pega da sessão, ou 'Usuário' se não tive
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Transparency</a>
+            <a class="navbar-brand" href="#">ClearView</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,28 +27,28 @@ $nomeUsuario = $_SESSION['nome']; // pega da sessão, ou 'Usuário' se não tive
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Despesas
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Relatório de Despesas</a></li>
+                    <li><a class="dropdown-item" href="#">Gráficos</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">Em breve mais funcionalidades</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Dúvidas</a>
                 </li>
             </ul>
-            <li class="nav-item dropdown">
+            <ul style="margin-top: 1%; margin-right: 1%;" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="..//assets/img/perfil.png" alt="Perfil" width="30" height="30" class="rounded-circle me-2">
                     Bem-vindo, <?php echo htmlspecialchars($nomeUsuario); ?>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="/logout.php">Logout</a></li>
-                </ul>
-            </li>
+                <li class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="/logout.php">Logout</a>
+                </li>
+            </ul>
             </div>
         </div>
         </nav>        

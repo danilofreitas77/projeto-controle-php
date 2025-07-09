@@ -4,7 +4,6 @@
     include '../controller/conexao.php';
     require_once '../middleware/verificar_login.php';
     include 'templates/header.php';
-    $nomeUsuario = $_SESSION['nome'] ?? 'usuario';
 ?>
 
 
