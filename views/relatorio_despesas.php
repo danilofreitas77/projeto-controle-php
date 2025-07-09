@@ -20,7 +20,21 @@
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"></div>
+      <div class="accordion-body">
+        <div class="d-grid gap-3"> <!-- Garante espaçamento e largura total -->
+            <a href="#">
+                <button class="btn btn-success w-100">Receitas</button>
+            </a>
+            <a href="#">
+                <button class="btn btn-danger w-100">Despesas</button>
+            </a>
+            <a href="#">
+                <button class="btn btn-primary w-100">Previsão Orçamentária</button>
+            </a>
+            <a href="#">
+                <button class="btn btn-primary w-100">Receitas x Despesas</button>
+            </a>
+        </div>
     </div>
   </div>
 
