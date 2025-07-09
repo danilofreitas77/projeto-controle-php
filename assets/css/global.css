@@ -1,26 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Se quiser, pode incluir: */
+  /* font-family: Arial, sans-serif; */
+}
+
+main {
+  flex: 1 0 auto; /* permite o main crescer e empurrar o footer para baixo */
+  background-color: rgb(196, 196, 196); /* só para teste, depois pode remover */
+  padding: 20px; /* espaçamento interno */
+  box-sizing: border-box;
+}
+
+/* From Uiverse.io by alexmaracinaru */ 
+button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #c4e201;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%; /* garantir que cobre toda a largura da viewport */
+  flex-shrink: 0; /* impede que o footer encolha */
+  width: 100%;
   height: 90px;
-  background-color: rgba(0, 0, 0, 0.85); /* cor para cobrir o background */
+  background-color: rgba(0, 0, 0, 0.85);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  box-sizing: border-box; /* evitar problemas de largura e padding */
+  box-sizing: border-box;
   padding: 0 20px;
-  z-index: 10; /* garantir que fique sobre outros elementos */
 }
 
 /* Responsividade para o footer no celular */
 @media (max-width: 600px) {
   footer {
-    height: auto; /* altura automática */
+    height: auto;
     padding: 15px 20px;
-    flex-direction: column; /* empilhar conteúdo se houver */
+    flex-direction: column;
     text-align: center;
   }
 }

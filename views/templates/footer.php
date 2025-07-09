@@ -1,7 +1,3 @@
-<head>
-    <link rel="stylesheet" href="../../assets/css/global.css">
-</head>
-
 <footer class="bg-dark text-white py-3">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
 

@@ -1,9 +1,14 @@
+<?php
+$nomeUsuario = $_SESSION['nome']; // pega da sessão, ou 'Usuário' se não tiver
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/global.css">
     <title>Document</title>
 </head>
 <body>
@@ -34,6 +39,15 @@
                     <a class="nav-link" href="#">Dúvidas</a>
                 </li>
             </ul>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="..//assets/img/perfil.png" alt="Perfil" width="30" height="30" class="rounded-circle me-2">
+                    Bem-vindo, <?php echo htmlspecialchars($nomeUsuario); ?>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="/logout.php">Logout</a></li>
+                </ul>
+            </li>
             </div>
         </div>
         </nav>        
