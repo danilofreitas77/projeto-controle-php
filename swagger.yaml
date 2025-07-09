@@ -1,3 +1,5 @@
+# Para ver a documentação interativa acesse: https://editor.swagger.io/
+
 openapi: 3.0.1
 info:
   title: Portal da Transparência - API
