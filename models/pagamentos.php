@@ -5,7 +5,7 @@
     class Pagamento {
         private $conn;
         
-        public function__construct($conn) {
+        public function __construct($conn) {
             $this->conn = $conn;
         }
     
