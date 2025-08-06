@@ -1,34 +1,21 @@
 <?php
 
-class Pagamento {
-    public static function listarMesesComDespesas($conn) {
-        $sql = "SELECT DISTINCT DATE_FORMAT(data, '%M %Y') AS mes FROM pagamentos WHERE data IS NOT NULL ORDER BY data DESC";
-        $result = $conn->query($sql);
-        $meses = [];
+    require_once '../controller/conexao.php';
 
-        while ($row = $result->fetch_assoc()) {
-            if ($row['mes']) {
-                $meses[] = $row['mes'];
-            }
+    class Pagamento {
+        private $conn;
+        
+        public function__construct($conn) {
+            $this->conn = $conn;
         }
-        return $meses;
-    }
-
-    public static function listarSetoresPorMes($conn, $mes) {
-        $stmt = $conn->prepare("SELECT setor, SUM(valor) as total FROM pagamentos WHERE mes = ? GROUP BY setor");
-        $stmt->bind_param("s", $mes);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        $setores = [];
-        while ($row = $result->fetch_assoc()) {
-            $setores[] = $row;
+    
+        public function inserir($id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $comprovante) {
+            $stmt = $this->conn->prepare("INSERT INTO pagamentos (id_setor, id_subsetor, fornecedor, valor, dt_pagamento, comprovante) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("iissds", $id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $comprovante);
+            $stmt->execute();
+            $stmt->close();
         }
-        return $setores;
     }
-}
-
-
 
 
 
