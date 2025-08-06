@@ -28,10 +28,6 @@ uploads/*
 *.tmp
 *.swp
 
-# Dependências externas
-vendor/
-node_modules/
-
 # Arquivos de build ou deploy
 dist/
 build/
