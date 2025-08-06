@@ -13,8 +13,9 @@
     $id_setor = $_POST['id_setor'];
     $id_subsetor = $_POST['id_subsetor'];
     $fornecedor = $_POST['fornecedor'];
-    $valor = $_POST['valor'];
     $dt_pagamento = $_POST['dt_pagamento'];
+    $valor = str_replace(',', '.', $_POST['valor']);
+    $valor = floatval($valor);
 
     // Processamento do PDF
 
