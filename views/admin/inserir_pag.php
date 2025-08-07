@@ -1,6 +1,7 @@
 <?php
 
     require '../templates/header.php';
+    //require '../../api/get_setores.php';
 
 ?>
 
@@ -44,11 +45,8 @@
         <div class="row">
 
             <div class="col">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Setor</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select id="selectSetor" class="form-select" aria-label="Default select example">
+                    <option selected disabled>Selecione um setor</option>
                 </select>
             </div>
 
@@ -82,6 +80,24 @@
     </form>
 </main>
 
+<script>
+    fetch('../../api/get_setores.php')
+        .then(response => response.json())
+        .then(data => {
+            const select = document.getElementById('selectSetor');
+            select.innerHTML = '<option selected disabled>Selecione um setor</option>';
+
+            data.forEach(setor => {
+            const option = document.createElement('option');
+            option.value = setor.id;
+            option.textContent = setor.nome;
+            select.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao carregar setores:', error);
+        });
+</script>
 
 <?php
 

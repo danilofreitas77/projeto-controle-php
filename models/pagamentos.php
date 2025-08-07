@@ -9,14 +9,17 @@
             $this->conn = $conn;
         }
     
-        public function inserir($id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $caminho) {
-            $stmt = $this->conn->prepare("INSERT INTO pagamentos (id_setor, id_subsetor, fornecedor, valor, dt_pagamento, comprovante) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iisdss", $id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $caminho);
-            $result = $stmt->execute();
-            $stmt->close();
+        public function listarTodos() {
+            $stmt = $this->conn->prepare("SELECT id, nome FROM setores ORDER BY nome");
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-            return $result;
-        }
+            $setores = [];
+            while ($row = $result->fetch_assoc()) {
+                $setores[] = $row;
+            }
+            return $setores;
+            }
     }
 
 
