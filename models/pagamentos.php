@@ -20,6 +20,25 @@
             }
             return $setores;
             }
+
+         public function inserir($id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $caminho_pdf) {
+                $sql = "INSERT INTO pagamentos (id_setor, id_subsetor, fornecedor, valor, dt_pagamento, arquivo_pdf) 
+                        VALUES (?, ?, ?, ?, ?, ?)";
+
+                $stmt = $this->conn->prepare($sql);
+                if (!$stmt) {
+                    die("Erro na preparação da query: " . $this->conn->error);
+                }
+
+                // bind dos parâmetros (s = string, i = int, d = double/float)
+                $stmt->bind_param("iisdss", $id_setor, $id_subsetor, $fornecedor, $valor, $dt_pagamento, $caminho_pdf);
+
+
+                $executou = $stmt->execute();
+                $stmt->close();
+
+                return $executou; // true se inseriu, false se não
+            }
     }
 
 

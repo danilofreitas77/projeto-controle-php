@@ -4,7 +4,7 @@
     require_once __DIR__ . '/../models/setores.php';
 
 
-    $conn = conectar();
+    $conn = Database::conectar();
     $setor = new Setor($conn);
     $dados = $setor->listarTodos();
 
