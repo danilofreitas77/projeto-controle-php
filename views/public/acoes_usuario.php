@@ -13,8 +13,6 @@
 
     <div id="accordionMeses" class="accordion"></div>
 
-
-
 </main>
 
 <script>
