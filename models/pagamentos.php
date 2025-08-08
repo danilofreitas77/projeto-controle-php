@@ -39,6 +39,19 @@
 
                 return $executou; // true se inseriu, false se não
             }
+
+            public function getMesesComPagamentos() {
+                $sql = "SELECT DISTINCT MONTH(dt_pagamento) AS mes FROM pagamentos ORDER BY mes ASC";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $meses = [];
+                while ($row = $result->fetch_assoc()) {
+                    $meses[] = (int)$row['mes'];
+                }
+                $stmt->close();
+                return $meses;
+        }
     }
 
 
