@@ -9,12 +9,9 @@ Sistema web para controle de despesas, receitas e prestação de contas do condo
 ### Usuário (cliente)
 - Acesso às despesas mensais por setor/subsetor
 - Visualização de comprovantes em PDF
-- Consulta a receitas, previsão orçamentária e comparativo
 
 ### Administrador
 - Inserção de pagamentos com comprovantes
-- Cadastro de receitas
-- Definição de valores fixos mensais por setor/subsetor
 - Dashboard e relatórios (em breve)
 
 ---
@@ -55,8 +52,7 @@ git clone https://github.com/danilofreitas77/projeto-controle-php.git
 5. Acesse localhost/projeto-controle-php no navegador
 
 📌 Status do Projeto
-🚧 Em desenvolvimento (Julho 2025)
-🛠️ Prazo de entrega: 30 dias
+🚧 Em desenvolvimento (Agosto 2025)
 
 📞 Contato
 Desenvolvido por Danilo Freitas

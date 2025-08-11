@@ -55,7 +55,8 @@
 
 
             public function getResumoMes($mes) {
-                
+
+                // Total geral do mês
                 $sqlTotal = "SELECT SUM(valor) as total FROM pagamentos WHERE MONTH(dt_pagamento) = ?";
                 $stmtTotal = $this->conn->prepare($sqlTotal);
                 $stmtTotal->bind_param("i", $mes);
@@ -63,22 +64,37 @@
                 $resTotal = $stmtTotal->get_result()->fetch_assoc();
                 $totalGeral = $resTotal['total'] ?? 0;
 
-                $sqlSetores = "
-                    SELECT s.id_setor, s.nome AS nome_setor, SUM(p.valor) AS total_setor
-                    FROM pagamentos p
-                    JOIN setores s ON s.id_setor = p.id_setor
-                    WHERE MONTH(p.dt_pagamento) = ?
-                    GROUP BY s.id_setor, s.nome
-                ";
-
-
-                $stmtSetores = $this->conn->prepare($sqlSetores);
-                $stmtSetores->bind_param("i", $mes);
-                $stmtSetores->execute();
-                $resSetores = $stmtSetores->get_result();
+                // Lista fixa de setores
+                $setoresFixos = [
+                    1 => 'Pessoal',
+                    2 => 'Impostos Associação',
+                    3 => 'Mão de Obra Terceirizada',
+                    4 => 'Manutenção/Conservação',
+                    5 => 'Materiais de Consumo',
+                    6 => 'Despesas Administrativas',
+                    7 => 'Concessionárias',
+                    8 => 'Despesas Bancárias',
+                    9 => 'Eventos',
+                    10 => 'Outras Despesas'
+                ];
 
                 $setores = [];
-                while ($setor = $resSetores ->fetch_assoc()) {
+
+                foreach ($setoresFixos as $idSetor => $nomeSetor) {
+
+                    // Total do setor
+                    $sqlTotalSetor = "
+                        SELECT SUM(valor) AS total_setor
+                        FROM pagamentos
+                        WHERE MONTH(dt_pagamento) = ? AND id_setor = ?
+                    ";
+                    $stmtTotalSetor = $this->conn->prepare($sqlTotalSetor);
+                    $stmtTotalSetor->bind_param("ii", $mes, $idSetor);
+                    $stmtTotalSetor->execute();
+                    $resTotalSetor = $stmtTotalSetor->get_result()->fetch_assoc();
+                    $totalSetor = $resTotalSetor['total_setor'] ?? 0;
+
+                    // Busca subsetores desse setor
                     $sqlSubsetores = "
                         SELECT sub.id_subsetor, sub.nome AS nome_subsetor, SUM(p.valor) AS total_subsetor
                         FROM pagamentos p
@@ -86,34 +102,33 @@
                         WHERE MONTH(p.dt_pagamento) = ? AND p.id_setor = ?
                         GROUP BY sub.id_subsetor, sub.nome
                     ";
+                    $stmtSub = $this->conn->prepare($sqlSubsetores);
+                    $stmtSub->bind_param("ii", $mes, $idSetor);
+                    $stmtSub->execute();
+                    $resSub = $stmtSub->get_result();
+
+                    $subsetores = [];
+                    while ($sub = $resSub->fetch_assoc()) {
+                        $subsetores[] = $sub;
+                    }
+
+                    // Adiciona no array final apenas se tiver dados
+                    if ($totalSetor > 0) {
+                        $setores[] = [
+                            'id_setor' => $idSetor,
+                            'nome_setor' => $nomeSetor,
+                            'total_setor' => $totalSetor,
+                            'subsetores' => $subsetores
+                        ];
+                    }
                 }
-
-                $stmtSub = $this->conn->prepare($sqlSubsetores);
-                $stmtSub->bind_param("ii", $mes, $setor['id_setor']);
-                $stmtSub->execute();
-                $resSub = $stmtSub->get_result();
-
-                $subsetores = [];
-                while ($sub = $resSub->fetch_assoc()) {
-                    $subsetores[] = $sub;
-                }
-
-                $setores[] = [
-                    'id_setor' => $setor['id_setor'],
-                    'nome_setor' => $setor['nome_setor'],
-                    'total_setor' => $setor['total_setor'],
-                    'subsetores' => $subsetores
-                ];
 
                 return [
                     'total_geral' => $totalGeral,
                     'setores' => $setores
                 ];
-
-
-
-
             }
+
 
 
 
