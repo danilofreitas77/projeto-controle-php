@@ -32,7 +32,7 @@ fetch(`../../api/get_resumo_mes.php?mes=${mes}`)
             <span>${sub.nome_subsetor}</span>
             <div>
               <span class="me-3">R$ ${parseFloat(sub.total_subsetor).toFixed(2).replace('.', ',')}</span>
-              <a href="ver_pagamentos.php?mes=${mes}&subsetor=${sub.id_subsetor}" class="btn btn-sm btn-outline-primary">Ver detalhes</a>
+              <a href="ver_subsetor.php?mes=${mes}&subsetor=${sub.id_subsetor}" class="btn btn-sm btn-outline-primary">Ver detalhes</a>
             </div>
           </li>`;
       });

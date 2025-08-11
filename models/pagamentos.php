@@ -131,6 +131,31 @@
 
 
 
+            public function getPagamentosPorSubsetor($mes, $idSubsetor) {
+                $sql = "
+                    SELECT id_pagamento, fornecedor, descricao, valor, dt_pagamento, arquivo_pdf
+                    FROM pagamentos
+                    WHERE MONTH(dt_pagamento) = ? 
+                    AND id_subsetor = ?
+                    ORDER BY dt_pagamento DESC
+                ";
+
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bind_param("ii", $mes, $idSubsetor);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                $pagamentos = [];
+                while ($row = $result->fetch_assoc()) {
+                    $pagamentos[] = $row;
+                }
+
+                return $pagamentos;
+            }
+
+
+
+
 
 
 
