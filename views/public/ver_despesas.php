@@ -9,8 +9,10 @@
 
 
 <main>
-  <h3 id="valorTotalMes">Total do mês: R$ 0,00</h3>
+  <h3 id="valorTotalMes" style="color: white;">Total do mês: R$ 0,00</h3>
   <div class="accordion mt-4" id="accordionSetores"></div>
+
+  <a href="index.php"><button class="btn btn-primary">< Voltar</button></a>
 </main>
 
 <script>
@@ -54,6 +56,8 @@ fetch(`../../api/get_resumo_mes.php?mes=${mes}`)
   })
   .catch(err => console.error('Erro ao buscar resumo:', err));
 </script>
+
+
 
 
 

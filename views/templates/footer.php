@@ -2,6 +2,8 @@
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
 
             <div class="text-center text-md-end mt-3 mt-md-0">
+
+                <img src="" alt="">
                 <p class="mb-1">Alphaville Pernambuco 2 © 2025 - Todos os direitos reservados</p>
                 <p class="mb-0">📞 (81) 9 8184-6338 | ✉️ financeiro@alphavillepernambuco2.com</p>
             </div>

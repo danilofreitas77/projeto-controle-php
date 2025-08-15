@@ -10,7 +10,7 @@
     <div class="col-12 col-md-6">
       <a class="card1" href="inserir_pag.php">
         <p>Adicionar Pagamentos 📅</p>
-        <p class="small">Todos os detalhes dos meses e possibilidade de edição.</p>
+        <p class="small">Insira os pagamentos dos mês.</p>
         <div class="go-corner">
           <div class="go-arrow">→</div>
         </div>

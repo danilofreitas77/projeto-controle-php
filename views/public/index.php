@@ -7,8 +7,8 @@
 
 
 <main>
-    <h1 style="margin-top: 3%; margin-left: 1%;">Seja Bem-Vindo (a) ao nosso</h1>
-    <h2 style="margin-left: 1%; color: black; margin-bottom: 8%;">Portal da Transparência</h2>
+    <h1 style="margin-top: 3%; margin-left: 1%; color:white">Seja Bem-Vindo (a) ao nosso</h1>
+    <h2 style="margin-left: 1%; color: black; margin-bottom: 8%; color:greenyellow">Portal da Transparência</h2>
 
 <div class="container">
   <div class="row g-4">

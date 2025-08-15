@@ -1,7 +1,7 @@
 <?php include '../templates/header.php'; ?>
 
 <main>
-    <h3 id="tituloSubsetor">Pagamentos</h3>
+    <h3 id="tituloSubsetor" style="color: white;">Pagamentos</h3>
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
@@ -16,6 +16,8 @@
             <tr><td colspan="5">Carregando...</td></tr>
         </tbody>
     </table>
+
+    <a href="index.php"><button class="btn btn-primary">< Voltar</button></a>
 </main>
 
 <!-- Modal PDF -->

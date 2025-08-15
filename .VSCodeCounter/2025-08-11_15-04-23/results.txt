@@ -1,0 +1,65 @@
+Date : 2025-08-11 15:04:23
+Directory : c:\xampp\htdocs\projeto-controle-php
+Total : 27 files,  2799 codes, 25 comments, 292 blanks, all 3116 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| JSON     |          2 |      1,744 |          0 |          2 |      1,746 |
+| PHP      |         21 |        748 |         20 |        229 |        997 |
+| PostCSS  |          2 |        258 |          4 |         36 |        298 |
+| Markdown |          1 |         38 |          0 |         20 |         58 |
+| YAML     |          1 |         11 |          1 |          5 |         17 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                    |         27 |      2,799 |         25 |        292 |      3,116 |
+| . (Files)                                                            |          4 |      1,793 |          1 |         27 |      1,821 |
+| api                                                                  |          7 |        120 |          8 |         61 |        189 |
+| assets                                                               |          2 |        258 |          4 |         36 |        298 |
+| assets\css                                                           |          2 |        258 |          4 |         36 |        298 |
+| middleware                                                           |          1 |          7 |          0 |          8 |         15 |
+| models                                                               |          4 |        157 |          6 |         63 |        226 |
+| views                                                                |          9 |        464 |          6 |         97 |        567 |
+| views\admin                                                          |          3 |        144 |          2 |         29 |        175 |
+| views\public                                                         |          4 |        257 |          4 |         61 |        322 |
+| views\templates                                                      |          2 |         63 |          0 |          7 |         70 |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                             | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\xampp\htdocs\projeto-controle-php\README.md                       | Markdown |         38 |          0 |         20 |         58 |
+| c:\xampp\htdocs\projeto-controle-php\api\get_meses_pagamentos.php    | PHP      |          8 |          0 |          4 |         12 |
+| c:\xampp\htdocs\projeto-controle-php\api\get_pagamentos_subsetor.php | PHP      |         15 |          2 |          8 |         25 |
+| c:\xampp\htdocs\projeto-controle-php\api\get_resumo_mes.php          | PHP      |         13 |          0 |          8 |         21 |
+| c:\xampp\htdocs\projeto-controle-php\api\get_setores.php             | PHP      |          9 |          0 |          7 |         16 |
+| c:\xampp\htdocs\projeto-controle-php\api\get_subsetores.php          | PHP      |         14 |          1 |         10 |         25 |
+| c:\xampp\htdocs\projeto-controle-php\api\inserir_pagamento.php       | PHP      |         44 |          5 |         10 |         59 |
+| c:\xampp\htdocs\projeto-controle-php\api\login_usuario.php           | PHP      |         17 |          0 |         14 |         31 |
+| c:\xampp\htdocs\projeto-controle-php\assets\css\global.css           | PostCSS  |        237 |          4 |         34 |        275 |
+| c:\xampp\htdocs\projeto-controle-php\assets\css\login.css            | PostCSS  |         21 |          0 |          2 |         23 |
+| c:\xampp\htdocs\projeto-controle-php\composer.json                   | JSON     |          5 |          0 |          1 |          6 |
+| c:\xampp\htdocs\projeto-controle-php\composer.lock                   | JSON     |      1,739 |          0 |          1 |      1,740 |
+| c:\xampp\htdocs\projeto-controle-php\middleware\verifica_admin.php   | PHP      |          7 |          0 |          8 |         15 |
+| c:\xampp\htdocs\projeto-controle-php\models\pagamentos.php           | PHP      |        121 |          6 |         40 |        167 |
+| c:\xampp\htdocs\projeto-controle-php\models\setores.php              | PHP      |         15 |          0 |         12 |         27 |
+| c:\xampp\htdocs\projeto-controle-php\models\subsetores.php           | PHP      |         21 |          0 |         10 |         31 |
+| c:\xampp\htdocs\projeto-controle-php\models\usuarios.php             | PHP      |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\projeto-controle-php\swagger.yaml                    | YAML     |         11 |          1 |          5 |         17 |
+| c:\xampp\htdocs\projeto-controle-php\views\admin\dashboard.php       | PHP      |         18 |          0 |          7 |         25 |
+| c:\xampp\htdocs\projeto-controle-php\views\admin\inserir_pag.php     | PHP      |         86 |          2 |         18 |        106 |
+| c:\xampp\htdocs\projeto-controle-php\views\admin\login.php           | PHP      |         40 |          0 |          4 |         44 |
+| c:\xampp\htdocs\projeto-controle-php\views\public\acoes_usuario.php  | PHP      |         52 |          1 |         13 |         66 |
+| c:\xampp\htdocs\projeto-controle-php\views\public\index.php          | PHP      |         23 |          1 |         14 |         38 |
+| c:\xampp\htdocs\projeto-controle-php\views\public\ver_despesas.php   | PHP      |         49 |          1 |         14 |         64 |
+| c:\xampp\htdocs\projeto-controle-php\views\public\ver_subsetor.php   | PHP      |        133 |          1 |         20 |        154 |
+| c:\xampp\htdocs\projeto-controle-php\views\templates\footer.php      | PHP      |         11 |          0 |          3 |         14 |
+| c:\xampp\htdocs\projeto-controle-php\views\templates\header.php      | PHP      |         52 |          0 |          4 |         56 |
+| Total                                                                |          |      2,799 |         25 |        292 |      3,116 |
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+
